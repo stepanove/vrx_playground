@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "colcon build",
+            "type": "shell",
+            "command": "colcon build --merge-install --symlink-install",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "lanuch sim",
+            "type": "shell",
+            "command": "source install/setup.bash && ros2 launch vrx_gz competition.launch.py world:=sydney_regatta extra_gz_args:=-v1",
+            "problemMatcher": [],
+        },
+        {
+            "label": "lanuch rviz",
+            "type": "shell",
+            "command": "source install/setup.bash && ros2 launch vrx_gazebo rviz.launch.py",
+            "problemMatcher": [],
+        },
+        {
+            "label": "lanuch playground",
+            "type": "shell",
+            "command": "source install/setup.bash && ros2 launch playground playground.launch.py",
+            "problemMatcher": [],
+        },
+        {
+            "label": "lanuch something",
+            "type": "shell",
+            "command": "source install/setup.bash && ros2 launch ${input:package} ${input:launch_file}",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "package",
+            "type": "promptString",
+            "description": "Package name"
+        },
+        {
+            "id": "launch_file",
+            "type": "promptString",
+            "description": "Launch file name"
+        }
+    ]
+}
