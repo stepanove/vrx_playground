@@ -14,15 +14,9 @@
             }
         },
         {
-            "label": "lanuch sim",
-            "type": "shell",
-            "command": "source install/setup.bash && ros2 launch vrx_gz competition.launch.py world:=sydney_regatta extra_gz_args:=-v1",
-            "problemMatcher": [],
-        },
-        {
             "label": "lanuch rviz",
             "type": "shell",
-            "command": "source install/setup.bash && ros2 launch vrx_gazebo rviz.launch.py",
+            "command": "source install/setup.bash && ros2 launch playground rviz.launch.py",
             "problemMatcher": [],
         },
         {
