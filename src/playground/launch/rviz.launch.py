@@ -14,6 +14,6 @@ def generate_launch_description():
             namespace='',
             executable='rviz2',
             name='rviz2',
-            arguments=['-d' + os.path.join(get_package_share_directory('playground'), 'config', 'rviz.rviz')]
+            arguments=['-d' + os.path.join(get_package_share_directory('playground'), 'config', 'nav2.rviz')]
         )
     return LaunchDescription([rvz])

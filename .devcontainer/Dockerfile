@@ -18,6 +18,7 @@ RUN userdel -r $(getent passwd ${USER_UID} | cut -d: -f1) || \
     ros-${ROS_DISTRO}-joy-teleop \
     ros-${ROS_DISTRO}-rqt* \
     ros-${ROS_DISTRO}-rviz2 \
+    ros-${ROS_DISTRO}-nav2-route \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     && rm -rf /var/lib/apt/lists/*

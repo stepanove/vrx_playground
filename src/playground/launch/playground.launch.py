@@ -53,8 +53,14 @@ def generate_launch_description():
                     get_package_share_directory('playground'), 'launch', 'rviz.launch.py')])
              )
 
+    navigation = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory('playground'), 'launch', 'navigation.launch.py')])
+             )                
+
     return LaunchDescription([ros_gz_bridge, controller, joy,
                                sim,
                                localization,
                                rviz,
+                               navigation
                                ])

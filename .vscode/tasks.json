@@ -20,6 +20,12 @@
             "problemMatcher": [],
         },
         {
+            "label": "lanuch navigation",
+            "type": "shell",
+            "command": "source install/setup.bash && ros2 launch playground navigation.launch.py",
+            "problemMatcher": [],
+        },
+        {
             "label": "lanuch playground",
             "type": "shell",
             "command": "source install/setup.bash && ros2 launch playground playground.launch.py",
