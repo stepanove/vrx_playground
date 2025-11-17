@@ -42,7 +42,7 @@ bt_navigator:
   ros__parameters:
     global_frame: map
     robot_base_frame: base_link
-    odom_topic: /odomery/global
+    odom_topic: odom
     bt_loop_duration: 10
     default_server_timeout: 1000
     wait_for_service_timeout: 10000
@@ -67,7 +67,7 @@ bt_navigator:
 controller_server:
   ros__parameters:
     enable_stamped_cmd_vel: true
-    controller_frequency: 20.0
+    controller_frequency: 10.0
     costmap_update_timeout: 0.30
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.5
@@ -92,28 +92,28 @@ controller_server:
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
-      xy_goal_tolerance: 0.25
+      xy_goal_tolerance: 1.0
       yaw_goal_tolerance: 0.25
     FollowPath:
       open_loop: true
       plugin: "nav2_mppi_controller::MPPIController"
-      time_steps: 56
-      model_dt: 0.05
+      time_steps: 200
+      model_dt: 0.1
       batch_size: 2000
       ax_max: 3.0
       ax_min: -3.0
       ay_max: 3.0
       ay_min: -3.0
       az_max: 3.5
-      vx_std: 1.2
+      vx_std: 2.0
       vy_std: 0.2
       wz_std: 0.4
-      vx_max: 1.5
-      vx_min: -0.35
+      vx_max: 2.
+      vx_min: -1.0
       vy_max: 0.5
       wz_max: 1.9
       iteration_count: 1
-      prune_distance: 1.7
+      prune_distance: 25.
       transform_tolerance: 0.1
       temperature: 0.3
       gamma: 0.015
@@ -370,8 +370,8 @@ velocity_smoother:
     smoothing_frequency: 20.0
     scale_velocities: False
     feedback: "OPEN_LOOP"
-    max_velocity: [0.5, 0.0, 2.0]
-    min_velocity: [-0.5, 0.0, -2.0]
+    max_velocity: [5.0, 0.0, 2.0]
+    min_velocity: [-5.0, 0.0, -2.0]
     max_accel: [2.5, 0.0, 3.2]
     max_decel: [-2.5, 0.0, -3.2]
     odom_topic: "odom"

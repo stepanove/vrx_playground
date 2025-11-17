@@ -41,7 +41,7 @@ def generate_launch_description():
     nav_group = GroupAction([
         # SetRemap(src='/scan', dst='/wamv/sensors/lidars/lidar_wamv_sensor/scan'),
         SetRemap(src='/scan', dst='/wamv/sensors/lidars/lidar_wamv_sensor/points'),
-        # SetRemap(src='/odom', dst='/odometry/global'),
+        SetRemap(src='/odom', dst='/odometry/global'),
 
     IncludeLaunchDescription(
         PythonLaunchDescriptionSource(

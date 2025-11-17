@@ -21,7 +21,7 @@ class NaiveController(Node):
         self.left_thrust_msg = Float64()
         self.right_thrust_msg = Float64()
         
-        self.linear_gain=2000.;
+        self.linear_gain=150.;
         self.angular_gain=500.; 
 
         self.twist_sub = self.create_subscription(TwistStamped, '/cmd_vel',self.twistCB,1)
