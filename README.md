@@ -2,6 +2,12 @@
 
 VSCode development environment for experimenting with [VRX simulation environment](https://github.com/osrf/vrx).
 
+This project uses git submodules, don't forget to clone it recursively.
+```
+git clone https://github.com/stepanove/vrx_playground.git --recursive
+```
+
+
 The first start can take some time because Gazebo needs to download assets, be patient.
 
 At the moment it just allows to run the simulation in a devcontainer, control WAM-V with a joystic or via Gazebo's telop GUI.
