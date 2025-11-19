@@ -19,5 +19,9 @@ Alternatively you can build and start it from VSCode terminal using something li
 colcon build --merge-install --symlink-install
 source install/setup.bash && ros2 launch playground playground.launch.py
 ```
+Depending on your host system, you may need to do some additional configuration to enable X11 forwarding. For example, you could try executing the following command in the host terminal:
+```
+xhost local:$USER
+```
 
 <img width="2553" height="1409" alt="screenshot" src="https://github.com/user-attachments/assets/44d09a29-70cf-4658-879f-35bde5a64d7c" />
