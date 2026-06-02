@@ -13,7 +13,9 @@
     },    
     "runArgs": [
         "--device=/dev/dri",
-        "--device-cgroup-rule=c 13:* rmw"
+        "--device-cgroup-rule=c 13:* rmw",
+        "-e", "XAUTHORITY=/tmp/.Xauthority",
+        "-v", "${localEnv:HOME}/.Xauthority:/tmp/.Xauthority"
     ],
     "customizations": {
         "vscode": {
